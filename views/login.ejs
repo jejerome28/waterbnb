@@ -1,0 +1,15 @@
+<%- include('headers/header.ejs') %> 
+<%- include('headers/nav.ejs') %> 
+
+<form action="/login" method="post">
+    <h1>Login Account</h1>
+    <div class="mb-3">
+        <label for="username" class="form-label">username</label>
+        <input type="text" class="form-control" name="username" id="username" placeholder="Enter username" required>
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">password</label>
+        <input type="password" class="form-control" name="password" id="password" placeholder="Enter password" required>
+    </div>
+    <button type="submit" class="btn btn-outline-success">Login</button>
+</form>

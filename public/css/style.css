@@ -1,0 +1,23 @@
+.login {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.login > a {
+   margin: 1rem; 
+}
+
+.map {
+    height: 25%;
+    width: 25%;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.review {
+    border: 1px solid aqua;
+}

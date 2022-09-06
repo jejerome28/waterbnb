@@ -1,0 +1,23 @@
+<%- include('headers/header.ejs') %> 
+<%- include('headers/nav_logged_in.ejs') %> 
+<body>
+    <br>
+    <br>
+   <% for(let list of lists){ %> 
+   <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="<%= list.picture %> ">
+            <div class="card-body">
+                <h5 class="card-title"><%= list.title %> </h5>
+                <p class="card-text">PhP <%= list.price %>/night </p>
+                <p class="card-text"><%= list.description %> </p>
+                <p class="card-text"><%= list.address %> </p>
+                <p class="card-text">Hosted by: <%= list.uploader %> </p>
+                <p class="card-text">Posted on: <%= list.createdAt %> </p>
+                <a href="/room/<%= list._id %> " class="btn btn-outline-primary" target="0">Details</a>
+            </div>
+    </div> 
+    <br>
+    <br>
+    <% } %> 
+</body>
+</html>

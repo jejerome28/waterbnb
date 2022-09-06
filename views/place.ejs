@@ -1,0 +1,41 @@
+<%- include('headers/header.ejs') %> 
+<%- include('headers/nav.ejs') %> 
+
+<body>
+    <h1><%= room.title %> </h1>
+    
+    <figure class="figure">
+        <img src="<%= room.picture %> " class="figure-img img-fluid rounded">
+        <figcaption class="figure-caption"><%= room.description %> </figcaption>
+        <figcaption class="figure-caption">Php <%= room.price %>/night</figcaption>
+        <figcaption class="figure-caption"><%= room.address %> </figcaption>
+        <figcaption class="figure-caption">Last update: <%= room.updatedAt %> </figcaption>
+        <a href="/" class="btn btn-outline-primary">Check more listings</a>
+    </figure>
+
+    <h2>Reviews</h2>
+    <br>
+    <div class="review">
+    <% for(let r of room.reviews){ %> 
+    <p><%= r %> </p>
+    <% } %> 
+   </div> 
+    <br>
+    <br>
+    <form action="/room/<%= room._id %>?_method=put" method="post">
+        <div class="mb-3"></div>
+            <label for="reviews" class="form-label">Add a Review</label>
+            <textarea class="form-control" name="reviews" id="exampleFormControlTextarea1" rows="3" placeholder="What do you think of this place?"></textarea>
+        </div>
+        <button type="submit" class="btn btn-outline-primary">Add Review</button>
+    </form>
+
+    <div class="map">
+        <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10126.746957291674!2d121.15291083417328!3d14.253975397474182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397d9d2519fcd9d%3A0x289ae126dedf2bc9!2sGulod%20Covered%20Court!5e0!3m2!1sen!2sph!4v1660126120733!5m2!1sen!2sph"
+        width="600" height="450" style="border:0;" allowfullscreen=""
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    
+</body>
+</html>

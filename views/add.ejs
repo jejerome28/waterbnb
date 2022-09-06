@@ -1,0 +1,45 @@
+<%- include('headers/header.ejs') %> 
+<%- include('headers/nav.ejs') %> 
+
+<body>
+    <form action="/" method="post">
+    <div class="mb-3">
+        <label for="uploader" class="form-label">Owner's Name</label>
+        <input type="text" class="form-control" name="uploader" id="uploader" placeholder="Enter owner">
+    </div>
+    <div class="mb-3">
+        <label for="title" class="form-label">Place's Name</label>
+        <input type="text" class="form-control" name="title" id="title" placeholder="Enter name">
+    </div>
+    <div class="mb-3">
+        <label for="price" class="form-label">Price</label>
+        <input type="number" class="form-control" name="price" id="price" placeholder="Enter price">
+    </div>
+    <div class="mb-3">
+        <label for="address" class="form-label">Location</label>
+        <input type="text" class="form-control" name="address" id="address" placeholder="Enter location">
+    </div>
+    <div class="mb-3">
+        <label for="picture" class="form-label">Upload image</label>
+        <input type="text" class="form-control" name="picture" id="picture" placeholder="Enter image url">
+    </div>
+    <div class="mb-3">
+        <label for="category">Select category</label>
+        <select class="form-select" name="category" id="category">
+            <option value="hotel">hotel</option>
+            <option value="resort">resort</option>
+            <option value="cottages">cottages</option>
+            <option value="travel inn">travel inn</option>
+            <option value="cabin">cabin</option>
+            <option value="camping">cottages</option>
+            <option value="surfing">surfing</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3" placeholder="A good description attracts customers..."></textarea>
+    </div>
+        <button class="btn btn-outline-primary" type="submit">Post listing</button>
+    </form>
+</body>
+</html>

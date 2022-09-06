@@ -1,0 +1,49 @@
+<%- include('headers/header.ejs') %> 
+<%- include('headers/nav.ejs') %> 
+
+<body>
+    <form action="/room/<%= toEdit._id %>?_method=put" method="post">
+    <h1>Edit Listing</h1>
+    <div class="mb-3">
+        <label for="uploader" class="form-label">Uploader's Name</label>
+        <input type="text" class="form-control" value="<%= toEdit.uploader %>" name="uploader" id="uploader" placeholder="Enter value="<%= %>" name">
+    </div>
+    <div class="mb-3">
+        <label for="title" class="form-label">Place's name</label>
+        <input type="text" class="form-control" value="<%= toEdit.title %>" name="title" id="title" placeholder="Enter value="<%= %>" name">
+    </div>
+    <div class="mb-3">
+        <label for="price" class="form-label">Price</label>
+        <input type="number" class="form-control" value="<%= toEdit.price %>" name="price" id="price" placeholder="Enter price">
+    </div>
+    <div class="mb-3">
+        <label for="address" class="form-label">Location</label>
+        <input type="text" class="form-control" value="<%= toEdit.address %>" name="address" id="address" placeholder="Enter location">
+    </div>
+    <div class="mb-3">
+        <label for="picture" class="form-label">Upload image</label>
+        <input type="text" class="form-control" value="<%= toEdit.picture %>" name="picture" id="picture" placeholder="Enter image url">
+    </div>
+    <div class="mb-3">
+        <label for="category">Select category</label>
+        <select class="form-select" value="<%= toEdit.category %>" name="category" id="category">
+            <option value="hotel">hotel</option>
+            <option value="resort">resort</option>
+            <option value="cottages">cottages</option>
+            <option value="travel inn">travel inn</option>
+            <option value="cabin">cabin</option>
+            <option value="camping">cottages</option>
+            <option value="surfing">surfing</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3" placeholder="A good description attracts customers..."> <%= toEdit.description %></textarea>
+    </div>
+        <button class="btn btn-outline-primary" type="submit">Post listing</button>
+    </form>
+    <form action="/room/<%= toEdit._id %>/?_method=delete" method="post">
+        <button class="btn btn-outline-danger" type="submit">Delete listing</button>
+    </form>
+</body>
+</html>
